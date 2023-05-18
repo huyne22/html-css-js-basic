@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assect/css/canvas.css">
+</head>
+<body>
+    <div class="container">
+        <div class="control">
+            <div class="color-picker" style="background-color: red;"></div>
+            <div class="color-picker" style="background-color: orange;"></div>
+            <div class="color-picker" style="background-color: yellow;"></div>
+            <div class="color-picker" style="background-color: green;"></div>
+            <div class="color-picker" style="background-color: blue;"></div>
+            <div class="color-picker" style="background-color: black;"></div>
+        </div>
+        <canvas id="draw" style="width: 600px; height: 600px;"></canvas>
+    </div>
+    <script>
+        const canvas = document.querySelector('#draw');
+        const context = canvas.getContext('2d');
+
+        context.fillStyle = 'blue';
+
+      function draw(x,y){
+        const circle = new Path2D();
+        circle.arc(x, y, 2, 0, 2 * Math.PI);
+        context.fill(circle);
+      }
+
+      let ismousedown = false;
+
+      canvas.addEventListener('mousedown', (e)=>{
+        ismousedown = true;
+      })
+
+      canvas.addEventListener('mouseup', (e)=>{
+        ismousedown = false;
+        console.log('mouseup')
+      })
+
+      canvas.addEventListener('mousemove', (e)=>{
+       if(!ismousedown){
+        return;
+       }
+       const {
+        clientX,
+        clientY
+       } = e;
+
+       var rect = canvas.getBoundingClientRect();
+       draw(clientX - rect.left, clientY - rect.top)
+      })
+
+      const colorPickers = [...document.querySelectorAll('.color-picker')]
+      colorPickers.forEach(colorPickers=>{
+        colorPickers.addEventListener('click', (e)=>{
+            context.fillStyle = e.target.style.backgroundColor
+        })
+      })
+    </script>
+</body>
+</html>

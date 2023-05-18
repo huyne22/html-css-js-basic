@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="./assect/icon/fontawesome-free-6.2.1-web/css/all.min.css"> -->
+    <link rel="stylesheet" href="./assect/css/style.css">
+    <title>Huy</title>
+</head>
+<body>
+   <div class="hero">
+        <h1>Customer Reviews</h1>
+        <div class="review-box">
+            <div class="slide">
+                <div class="card">
+                    <div class="profile">
+                        <img src="./assect/img/pic1.jpg" alt="">
+                        <div>
+                            <h3>Riley Olie</h3>
+                            <p>Web Designer</p>
+                        </div>
+                    </div>
+                    <p>People currently feel unsafe either when
+                        they stay at home or go out on the streets.
+                        This problem is caused by some factors, and
+                        it should be dealt with by some effective solutions.
+                    </p>
+                </div>
+                <div class="card">
+                    <div class="profile">
+                        <img src="./assect/img/pic2.jpg" alt="">
+                        <div>
+                            <h3>Merlin Nguyen</h3>
+                            <p>Senior Developer</p>
+                        </div>
+                    </div>
+                    <p>People currently feel unsafe either when
+                        they stay at home or go out on the streets.
+                        This problem is caused by some factors, and
+                        it should be dealt with by some effective solutions.
+                    </p>
+                </div>
+                <div class="card">
+                    <div class="profile">
+                        <img src="./assect/img/pic3.jpg" alt="">
+                        <div>
+                            <h3>John Williams</h3>
+                            <p>Team Lead</p>
+                        </div>
+                    </div>
+                    <p>People currently feel unsafe either when
+                        they stay at home or go out on the streets.
+                        This problem is caused by some factors, and
+                        it should be dealt with by some effective solutions.
+                    </p>
+                </div>
+                <div class="card">
+                    <div class="profile">
+                        <img src="./assect/img/pic4.jpg" alt="">
+                        <div>
+                            <h3>Steve McCurry</h3>
+                            <p>UI/UX Designer</p>
+                        </div>
+                    </div>
+                    <p>People currently feel unsafe either when
+                        they stay at home or go out on the streets.
+                        This problem is caused by some factors, and
+                        it should be dealt with by some effective solutions.
+                    </p>
+                </div>
+                <div class="slidebar">
+                    <img src="./assect/img/up-arrow.png" id="upArrow">
+                    <img src="./assect/img/down-arrow.png" id="downArrow">
+                </div>
+            </div>
+        </div>
+   </div>
+
+   <script>
+        const upArrow = document.querySelector('#upArrow')
+        const downArrow = document.querySelector('#downArrow')
+        const slide = document.querySelector('.slide');
+        const slideBar = document.querySelector('.slidebar');
+        let x = 0;
+        let y = 0;
+
+        upArrow.onclick = function(){
+            if(x > '-900'){
+                x = x - 300;
+                y = y + 300;
+                slide.style.top = x + "px";
+                slideBar.style.top = y + "px";
+            }
+        }
+        downArrow.onclick = function(){
+            if(x < 0){
+                x = x + 300;
+                y = y - 300;
+                slide.style.top = x + "px";
+                slideBar.style.top = y + "px";
+            }
+        }
+   </script>
+</body>
+</html>

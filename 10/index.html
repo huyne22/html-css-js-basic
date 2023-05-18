@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="./assect/icon/fontawesome-free-6.2.1-web/css/all.min.css"> -->
+    <link rel="stylesheet" href="./assect/css/style.css">
+    <title>Huy</title>
+</head>
+<body>
+   <div class="hero">
+        <div class="selector">
+            <div class="selectFiled">
+                <p id="selectText">Select Social Media</p>
+                <img src="./assect/img/arrow.png" id="arrowIcon">
+            </div>
+
+            <ul class="hide list" >
+                <li class="options">
+                    <img src="./assect/img/facebook.png">
+                    <p>Facebook</p>
+                </li>
+                <li class="options">
+                    <img src="./assect/img/instagram.png">
+                    <p>instagram</p>
+                </li>
+                <li class="options">
+                    <img src="./assect/img/pinterest.png">
+                    <p>pinterest</p>
+                </li>
+                <li class="options">
+                    <img src="./assect/img/twitter.png">
+                    <p>twitter</p>
+                </li>
+                <li class="options">
+                    <img src="./assect/img/whatsapp.png">
+                    <p>whatsapp</p>
+                </li>
+                <li class="options">
+                    <img src="./assect/img/youtube.png">
+                    <p>youtube</p>
+                </li>
+            </ul>
+        </div>
+   </div>
+
+   <script>
+        const selectFiled = document.querySelector('.selectFiled');
+        const selectText = document.querySelector('#selectText');
+        const options = document.querySelectorAll('.options');
+        const list = document.querySelector('.list');
+        const arrowIcon = document.querySelector('#arrowIcon');
+
+
+        selectFiled.onclick = function(){
+            list.classList.toggle('hide');
+            arrowIcon.classList.toggle('rotate');
+        }
+       
+        for(let option of options){
+            option.onclick = function(){
+                selectText.innerHTML = this.textContent;
+                list.classList.toggle('hide');
+                arrowIcon.classList.toggle('rotate');
+            }
+        }
+   </script>
+</body>
+</html>

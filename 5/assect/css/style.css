@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-box{
+    line-height: 0; 
+    margin: auto;
+    width: 60%;
+    background: url('../img/background.jpg');
+    overflow: hidden;
+    position: relative;
+}
+
+.car-img{
+    width: 100%;
+}
+
+.img-wrap{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+span{
+    width: 1px;
+    height: 100%;
+    cursor: ew-resize;
+    background: #fff;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.arrow{
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    margin-left: -20px;
+    margin-top: -20px;
+}
+

@@ -1,0 +1,21 @@
+.container{
+    width: 700px;
+    height: 600px;
+    border: 1px solid black;
+    display: flex;
+    margin: auto;
+}
+
+.control{
+    background-color: aqua;
+    flex: 1;
+    border: 1px solid #06a6fc;
+}
+
+.color-picker{
+    height: 100px;
+}
+
+#draw{
+    cursor: pointer;
+}

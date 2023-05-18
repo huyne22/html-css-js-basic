@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="./assect/icon/fontawesome-free-6.2.1-web/css/all.min.css"> -->
+    <link rel="stylesheet" href="./assect/css/style.css">
+    <title>Huy</title>
+</head>
+<body>
+    <div class="product">
+        <div class="product-small-img">
+            <img src="./assect/img/beach.jpg" onclick="myFunction(this)">
+            <img src="./assect/img/mountain.jpg" onclick="myFunction(this)">
+            <img src="./assect/img/snow.jpg" onclick="myFunction(this)">
+            <img src="./assect/img/forest.jpg" onclick="myFunction(this)">
+        </div>
+
+        <div class="img-container">
+            <img id="imgBox" src="./assect/img/beach.jpg">
+        </div>
+    </div>
+
+    <script>
+        function myFunction(smallImg){
+            var fullImg = document.querySelector('#imgBox');
+            fullImg.setAttribute('src', smallImg.getAttribute('src'));
+        }
+    </script>
+</body>
+</html>

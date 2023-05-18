@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assect/icon/fontawesome-free-6.2.1-web/css/all.min.css">
+    <link rel="stylesheet" href="./assect/css/style.css">
+    <title>Huy</title>
+</head>
+<body>
+   <div class="container">
+        <div class="img-box">
+            <img class="car-img" src="./assect/img/newcar.png">
+
+            <div class="img-wrap">
+                <img id="originalImg" src="./assect/img/oldcar.jpg">
+            </div>
+
+            <span id="line">
+                    <!-- <img class="arrow" src="./assect/img/arrow.jpg" style="color: #fff;"> -->
+                    <i class="arrow fa-solid fa-arrow-right"></i>
+                </span>
+        </div>
+   </div>
+
+   <script>
+    const imgBox = document.querySelector('.img-box');
+    const imgWrap = document.querySelector('.img-wrap');
+    const leftSpace = imgBox.offsetLeft;
+    const line = document.querySelector('#line');
+    
+    const originalImg = document.querySelector('#originalImg');
+
+    originalImg.style.width = imgBox.offsetWidth + "px";
+    console.log(originalImg, imgBox.offsetWidth)
+
+    imgBox.addEventListener('mousemove', (e)=>{
+        const boxWidth = (e.pageX - leftSpace) + "px";
+        imgWrap.style.width = boxWidth;
+        line.style.left = boxWidth;
+    })
+
+
+   </script>
+</body>
+</html>
